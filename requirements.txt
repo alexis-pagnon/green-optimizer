@@ -1,0 +1,7 @@
+flask
+selenium
+playwright
+pillow
+beautifulsoup4
+requests
+css-html-js-minify

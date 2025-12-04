@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <form action="/analyze" method="post">
+        <label>Entrez le site web à analyser :</label>
+        <input type="text" name="website" placeholder="https://example.com">
+        <button type="submit">Analyser</button>
+    </form>
+
+    {% if error %}
+      <p style="color:red">{{ error }}</p>
+    {% endif %}
+
+    {% if summary %}
+        <h2>Résumé de l'analyse : {{ website }} </h2>
+        <ul>
+            <li>Total des requêtes : {{ summary.total_requests }}</li>
+            <li>Total des octets transférés : {{ summary.total_transfer_bytes }} bytes</li>
+            <li>Total des images : {{ summary.total_images }}</li>
+            <li>Total des fichiers CSS/JS : {{ summary.total_css_js_files }}</li>
+            <li>Images mortes : {{ summary.dead_images_count }}</li>
+        </ul>
+    {% endif %}
+
+    {% if score %}
+        <h2>Score EcoIndex</h2>
+        <p>Score EcoIndex : <strong>{{ score }}/100</strong></p>
+    {% endif %}
+
+    
+
+</body>
+</html>
