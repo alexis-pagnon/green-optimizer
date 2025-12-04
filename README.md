@@ -9,7 +9,7 @@ Groupe NoSleep4Us
 ## Setup
 ```bash
 # Clone and enter the project
-git clone <your-repo-url>
+git clone https://github.com/alexis-pagnon/green-optimizer.git
 cd green-optimizer
 
 # Create and activate a virtual environment (optional)
